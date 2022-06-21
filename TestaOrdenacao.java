@@ -1,35 +1,56 @@
 public class TestaOrdenacao {
-    public static void main(String[] args){
-        Produto produtos[] = {
-            new Produto("Lamborghini", 1000000),
-            new Produto("Jipe", 46000),
-            new Produto("Brasília", 16000),
-            new Produto("Smart", 46000),
-            new Produto("Fusca", 17000)
-        };
 
-        for(int atual=0; atual < produtos.length; atual++){
-            int menor = buscaMenor(produtos, atual, produtos.length - 1);
-            Produto produtoAtual = produtos[atual];
-            Produto produtoMenor = produtos[menor];
-            produtos[atual] = produtoMenor;
-            produtos[menor] = produtoAtual;
-        }
+	public static void main(String[] args) {
+		Produto produtos[] = {
+				new Produto("Lamborghini", 1000000),
+				new Produto("Jipe", 46000),
+				new Produto("Brasília", 16000),
+				new Produto("Smart", 46000),
+				new Produto("Fusca", 17000)
+		};
+		
+		selectionSort(produtos, produtos.length);
+	
+		imprime(produtos);
+		
+	}
 
-        for(Produto produto: produtos){
-            System.out.println("O carro " + produto.getNome() + " custa: " + produto.getPreco());
-        }
+	private static void imprime(Produto[] produtos) {
+		for(Produto produto : produtos) {
+			System.out.println(produto.getNome() + " custa " +
+					produto.getPreco());
+		}
+	}
 
-    };
+	private static void troca(Produto[] produtos, int primeiro, int segundo) {
+		System.out.println("Estou trocando " + primeiro + " com " + segundo);
+		
+		Produto primeiroProduto = produtos[primeiro];
+		Produto segundoProduto = produtos[segundo];
+		System.out.println("Estou trocando " + primeiroProduto.getNome()
+										+ " com " + segundoProduto.getNome());
+		
+		produtos[primeiro] = segundoProduto;
+		produtos[segundo] = primeiroProduto;
+	}
 
+	private static void selectionSort(Produto[] produtos, int quantidadeDeElementos) {
+		for(int atual = 0; atual < quantidadeDeElementos - 1; atual++) {
+			System.out.println("Estou na casinha " + atual);
+			
+			int menor = buscaMenor(produtos, atual, quantidadeDeElementos - 1);
+			troca(produtos, atual, menor);
+		}		
+	}
+                                                                                                                                                                              
 
-    private static int buscaMenor(Produto[] produtos, int inicio, int termino){
-        int maisBarato = 0;
-        for(int atual=inicio; atual <= termino; atual++){
-            if(produtos[atual].getPreco() < produtos[maisBarato].getPreco()){
-                maisBarato = atual;
-            }
-        }
-        return maisBarato;
-    }
+	private static int buscaMenor(Produto[] produtos, int inicio, int termino) {
+		int maisBarato = inicio;
+		for(int atual = inicio; atual <= termino; atual++){
+			if(produtos[atual].getPreco() < produtos[maisBarato].getPreco()) {
+				maisBarato = atual;
+			}
+		}
+		return maisBarato;
+	}
 }
