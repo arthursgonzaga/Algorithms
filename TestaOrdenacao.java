@@ -22,13 +22,9 @@ public class TestaOrdenacao {
 		}
 	}
 
-	private static void troca(Produto[] produtos, int primeiro, int segundo) {
-		System.out.println("Estou trocando " + primeiro + " com " + segundo);
-		
+	private static void troca(Produto[] produtos, int primeiro, int segundo) {		
 		Produto primeiroProduto = produtos[primeiro];
 		Produto segundoProduto = produtos[segundo];
-		System.out.println("Estou trocando " + primeiroProduto.getNome()
-										+ " com " + segundoProduto.getNome());
 		
 		produtos[primeiro] = segundoProduto;
 		produtos[segundo] = primeiroProduto;
@@ -36,7 +32,6 @@ public class TestaOrdenacao {
 
 	private static void selectionSort(Produto[] produtos, int quantidadeDeElementos) {
 		for(int atual = 0; atual < quantidadeDeElementos - 1; atual++) {
-			System.out.println("Estou na casinha " + atual);
 			
 			int menor = buscaMenor(produtos, atual, quantidadeDeElementos - 1);
 			troca(produtos, atual, menor);
