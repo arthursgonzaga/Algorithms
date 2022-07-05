@@ -18,7 +18,7 @@ public class NovoSorte {
         private static void novoSort(Produto[] produtos, int quantidadeDeElementos) {
             for(int atual = 0; atual < quantidadeDeElementos; atual++){
                 int analise = atual;
-                while(analise > 0 && produtos[analise].getPreco() < produtos[analise-1].getPreco()){
+                while(analise > 0 &&produtos[analise].getPreco() < produtos[analise-1].getPreco()){
                     Produto produtoAnalise = produtos[analise];
                     Produto produtoAnaliseMenos1 = produtos[analise - 1];
                     produtos[analise] = produtoAnaliseMenos1;
