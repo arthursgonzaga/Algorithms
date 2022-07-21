@@ -15,14 +15,33 @@ public class TestaOrdenacaoRapida {
 
         ordena(notas, 0, notas.length);
         int encontrei = busca(notas, 0, notas.length, 9.3);
+        int encontrei_rapido = busca_rapida(notas, 0, notas.length, 9.3);
 
         System.out.println("Encontrei a nota em " + encontrei + ".");
+        System.out.println("Encontrei a nota em busca binária " + encontrei + ".");
+
 
         for(int atual=0; atual < notas.length; atual++){
             Nota nota = notas[atual];
             System.out.println(nota.getAluno() + " " + nota.getValor());
         }
 		
+    }
+
+    private static int busca_rapida(Nota[] notas, int de, int ate, double buscando) {
+        if(de > ate){
+            return -1;
+        }
+        int meio = (de + ate) / 2;
+        Nota nota = notas[meio];
+        if(buscando == nota.getValor()){
+            return meio;
+        }
+        if(buscando < nota.getValor()){
+            return busca_rapida(notas, de, meio - 1, buscando);
+        }
+
+        return busca_rapida(notas, meio+1, ate, buscando);
     }
 
     private static int busca(Nota[] notas, int de, int ate, double buscando) {
