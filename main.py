@@ -4,12 +4,13 @@ from sort.bubble_sort import bubble_sort
 import sys
 from time import time
 
+
 def main():
 
     print("----- Sort Algorithms -----")
-    input_array = input('Inserting array:\nExample: 1, 2, 4\n')
+    input_array = input("Inserting array:\nExample: 1, 2, 4\n")
     try:
-        li = list(input_array.split(','))
+        li = list(input_array.split(","))
         input_list = [int(x) for x in li]
     except:
         print("That was no valid array.")
@@ -23,12 +24,12 @@ def main():
     select_alg = input("Select one:\n")
 
     init_time = time()
-   
-    if select_alg == 'a':
+
+    if select_alg == "a":
         sorted_list = selection_sort(input_list, len(input_list))
-    elif select_alg == 'b':
+    elif select_alg == "b":
         sorted_list = insertion_sort(input_list, len(input_list))
-    elif select_alg == 'c':
+    elif select_alg == "c":
         sorted_list = bubble_sort(input_list, len(input_list))
     else:
         print("Invalid option")
@@ -41,5 +42,6 @@ def main():
     print("----- Execution time: -----")
     print(end_time - init_time, "seconds.")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
