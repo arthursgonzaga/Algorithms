@@ -22,7 +22,6 @@ def main():
     print("---------------------------")
     select_alg = input("Select one:\n")
 
-    print(time())
     init_time = time()
    
     if select_alg == 'a':
@@ -35,7 +34,6 @@ def main():
         print("Invalid option")
         exit()
 
-    print(time())
     end_time = time()
 
     print("------ Sorted Array: ------")
