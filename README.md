@@ -4,6 +4,7 @@ Implemented algorithms:
 
 * Selection Sort
 * Insertion Sort
+* Bubble Sort
 
 Language:
 
@@ -13,7 +14,4 @@ How to Run:
 
 * Select the algorithm you want to run for test
 * Run command:
-    `python3 main.py <algorithm>`
-
-* Example:
-    `python3 main.py selection_sort`
+    `python3 main.py`
