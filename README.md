@@ -5,6 +5,8 @@ Implemented algorithms:
 * Selection Sort
 * Insertion Sort
 * Bubble Sort
+* Linear Search
+* Binary Search
 
 Language:
 
