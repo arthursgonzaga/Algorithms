@@ -1,4 +1,3 @@
-from unittest import result
 import numpy as np
 
 def linear_search(input, number_elements, search_term):
@@ -19,7 +18,7 @@ def linear_search(input, number_elements, search_term):
 if __name__ == "__main__":
     example = [1, 30, 25, 12, 20, 2, 4, 7]
     search_number = 13
-    print("This is an example for insertion sort algorithm")
+    print("This is an example for linear search algorithm")
     print("Initial array:")
     print(example)
     print("Looking for number:", search_number)
